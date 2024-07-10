@@ -2,6 +2,7 @@ package com.qthreads.be.controller;
 
 import com.qthreads.be.db.dto.PostDto;
 import com.qthreads.be.db.entity.PostEntity;
+import com.qthreads.be.dto.QthreadsAppResponseDto;
 import com.qthreads.be.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +17,8 @@ public class PostController {
     private PostService postService;
 
     @PostMapping("/createpost")
-    public ResponseEntity<PostDto> createPost(@RequestBody PostDto post) {
-        return ResponseEntity.ok(postService.savePost(post));
+    public ResponseEntity<QthreadsAppResponseDto> createPost(@RequestBody PostDto post) {
+        return postService.savePost(post);
     }
 
 //    @PostMapping("/user/getposts")
